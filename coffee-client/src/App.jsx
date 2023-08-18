@@ -1,13 +1,14 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState,BrowserRouter,Routes,Route } from "react";
 import './App.css';
 import abiData from "./Abi";
+import AdminPage from './AdminPage';
 
 
 
 const App = () => {
 
   const [accounts, setAccounts] = useState([]);
-
+  const[purchases,setPurchases] = useState([])
   const[web3,setWeb3] = useState()
   const[coffeeContract,setCoffeeContract] = useState()
   const [coffeeCost,setCoffeeCost] = useState();
@@ -43,6 +44,20 @@ const App = () => {
 
   }, []);
 
+  function fetchPayments(){
+    console.log(coffeeContract.methods.allPayments)
+    coffeeContract.methods.showPayments().call()
+    .then(values=>{
+      setPurchases(values);
+    })
+  }
+  useEffect(()=>{
+    if(web3 && coffeeContract){
+      fetchPayments();
+      console.log(purchases)
+    }
+  },[web3,coffeeContract])
+
   const buyCoffee = async () => {
     if (!web3 || !coffeeContract) return;
     const userAccounts = await web3.eth.getAccounts();
@@ -54,6 +69,8 @@ const App = () => {
 
 
   return (
+   
+    
     <div>
       <p>Buy Me A Coffee</p>
       <p className="price">{coffeeCost}ETH</p>
@@ -63,7 +80,12 @@ const App = () => {
         <input type="email" name="email" id="" placeholder="enter your email" value={email} onChange={(e)=>{setEmail(e.target.value)}} />
         <button onClick={buyCoffee}>Buy with ETH</button>
    </div>
-    
+    {purchases.map((purchase)=>{
+      return(
+        <span style={{color:"white",textAlign:"center"}}>{purchase.email},</span>
+      )
+    })}
+   
     </div>
   );
 }
