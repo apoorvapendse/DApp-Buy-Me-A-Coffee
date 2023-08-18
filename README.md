@@ -2,6 +2,12 @@
 
 Welcome to the Buy Me a Coffee decentralized application (DApp) smart contract repository! This Solidity smart contract enables a seamless exchange of virtual coffees (or other items) through Ethereum blockchain transactions. Contributors can show their support by sending Ether to content creators, while creators can easily track and withdraw their received funds.
 
+## Deployer view
+![image](https://github.com/apoorvapendse/DApp-Buy-Me-A-Coffee/assets/102853901/fab2025f-c737-4530-ab5f-df0370841f3a)
+
+## End user view
+![image](https://github.com/apoorvapendse/DApp-Buy-Me-A-Coffee/assets/102853901/a8e8dfb2-1e5c-4f13-a4c8-a663a9663046)
+
 **Features:**
 
 - **Simple Payment Process**: Users can make payments for virtual coffees (or other items) by sending Ether to the contract.
