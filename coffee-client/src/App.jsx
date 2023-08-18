@@ -72,7 +72,7 @@ const App = () => {
    
     
     <div>
-      <p>Buy Me A Coffee</p>
+      <p style={{textAlign:"center"}}>Buy Me A Coffee</p>
       <p className="price">{coffeeCost}ETH</p>
    <div className="container">
 
@@ -80,11 +80,35 @@ const App = () => {
         <input type="email" name="email" id="" placeholder="enter your email" value={email} onChange={(e)=>{setEmail(e.target.value)}} />
         <button onClick={buyCoffee}>Buy with ETH</button>
    </div>
-    {purchases.map((purchase)=>{
-      return(
-        <span style={{color:"white",textAlign:"center"}}>{purchase.email},</span>
+
+
+      <div
+        style=
+        {{
+          marginTop:"50px",
+
+          color: "white",
+          textAlign: "center",
+          display: "flex",
+          flexDirection: "column",
+          gap: "5px",
+          height: "30vh",
+          overflowY: "scroll",
+          width: "80vw"
+
+
+        }}>
+          <h1>My Contributors</h1>
+          <span style={{fontStyle:"italic",marginBottom:"30px"}}>(scroll to see more)</span>
+        {purchases.map((purchase) => {
+          return (
+        <span>{purchase.email}</span>
       )
-    })}
+        })}
+
+
+        </div>
+    
    
     </div>
   );
