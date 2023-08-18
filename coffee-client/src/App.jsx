@@ -90,15 +90,18 @@ const App = () => {
           color: "white",
           textAlign: "center",
           display: "flex",
+          justifyContent:"center",
+          alignItems:"center",
           flexDirection: "column",
           gap: "5px",
           height: "30vh",
           overflowY: "scroll",
-          width: "80vw"
+          width: "100vw"
 
 
         }}>
           <h1>My Contributors</h1>
+          
           <span style={{fontStyle:"italic",marginBottom:"30px"}}>(scroll to see more)</span>
         {purchases.map((purchase) => {
           return (
