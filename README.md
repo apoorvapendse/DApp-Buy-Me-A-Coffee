@@ -1,5 +1,6 @@
 ## Buy Me a Coffee DApp - Smart Contract
 https://goerli.etherscan.io/address/0x5913461443aCE649AcDba032650b3f31003c6E5c#code
+
 Welcome to the Buy Me a Coffee decentralized application (DApp) smart contract repository! This Solidity smart contract enables end users you to buy the deployer virtual coffees through Ethereum blockchain transactions. Contributors can show their support by sending Ether to content creators, while creators can withdraw their received funds.
 
 ## Deployer view
